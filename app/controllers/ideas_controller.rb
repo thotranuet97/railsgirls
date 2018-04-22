@@ -12,6 +12,7 @@ class IdeasController < ApplicationController
   def show
     @comments = @idea.comments.all
     @comment = @idea.comments.new
+    @user = User.find_by(id: @idea.user_id)
   end
 
   # GET /ideas/new
