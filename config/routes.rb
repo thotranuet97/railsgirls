@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :ideas
   root 'ideas#index'
   match '/user.:id',     to: 'users#show',       via: 'get'
+  resources :ideas, only: [:show, :index]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
